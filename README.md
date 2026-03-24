@@ -122,8 +122,3 @@ Render desplegará automáticamente cada vez que hagas `git push` 🎉
 - ✉️ mayeticonamamani@gmail.com
 - 📱 +51 990 568 322
 
----
-
-## 📄 Licencia
-
-Este proyecto fue desarrollado como parte del laboratorio académico de **TECSUP** — 2025.
