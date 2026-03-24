@@ -2,7 +2,7 @@
 
 > Portafolio web personal desplegado como sitio estático en Render, con diseño moderno y minimalista en tonos morado pastel.
 
-🌐 **Ver en vivo:** [https://mayela-cv.onrender.com](https://mayela-cv.onrender.com)
+🌐 **Ver en vivo:** [https://mayela-cv.onrender.com](https://mi-cv-nep8.onrender.com)
 
 ---
 
