@@ -5,237 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mayela Ticona — CV</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #f5f2ee;
-      --surface: #ffffff;
-      --accent: #a49acc;
-      --accent-light: #f4dff5;
-      --text: #1a1a1a;
-      --muted: #6b7280;
-      --border: #e5e0d8;
-      --serif: 'DM Serif Display', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
-    }
-
-    body {
-      font-family: var(--sans);
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 3rem 1.5rem;
-      line-height: 1.6;
-    }
-
-    .page {
-      max-width: 860px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      background: var(--surface);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 48px rgba(0,0,0,0.10);
-      animation: fadeUp 0.7s ease both;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── SIDEBAR ── */
-    .sidebar {
-      background: var(--accent);
-      color: #fff;
-      padding: 2.8rem 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2.4rem;
-    }
-
-    .avatar-ring {
-      width: 90px; height: 90px;
-      border-radius: 50%;
-      border: 3px solid rgba(255,255,255,0.35);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.4rem;
-      background: rgba(255,255,255,0.12);
-      margin-bottom: 0.2rem;
-    }
-
-    .sidebar h1 {
-      font-family: var(--serif);
-      font-size: 1.65rem;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-    }
-
-    .sidebar .role {
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      opacity: 0.75;
-      margin-top: 0.3rem;
-    }
-
-    .sidebar-section h3 {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.6;
-      margin-bottom: 0.9rem;
-      padding-bottom: 0.45rem;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.84rem;
-      margin-bottom: 0.65rem;
-      opacity: 0.9;
-      word-break: break-all;
-    }
-
-    .contact-item .icon {
-      width: 28px; height: 28px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.15);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      font-size: 0.85rem;
-    }
-
-    .skill-bar-wrap { margin-bottom: 0.9rem; }
-    .skill-bar-label {
-      display: flex; justify-content: space-between;
-      font-size: 0.82rem; margin-bottom: 0.3rem; opacity: 0.9;
-    }
-    .skill-bar-bg {
-      height: 5px; border-radius: 99px;
-      background: rgba(255,255,255,0.18);
-      overflow: hidden;
-    }
-    .skill-bar-fill {
-      height: 100%; border-radius: 99px;
-      background: rgba(255,255,255,0.75);
-      transform-origin: left;
-      animation: grow 1s ease 0.5s both;
-    }
-    @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-
-    .lang-badge {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: rgba(255,255,255,0.15);
-      border-radius: 99px;
-      padding: 0.3rem 0.75rem;
-      font-size: 0.8rem;
-      margin: 0.2rem 0.2rem 0 0;
-    }
-
-    /* ── MAIN ── */
-    .main {
-      padding: 2.8rem 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2.2rem;
-    }
-
-    .section-title {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    .about-text {
-      font-size: 0.92rem;
-      color: #374151;
-      line-height: 1.75;
-      background: var(--accent-light);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 10px 10px 0;
-      padding: 1rem 1.2rem;
-    }
-
-    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .chip {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 99px;
-      padding: 0.3rem 0.9rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--accent);
-      transition: background 0.2s, transform 0.2s;
-    }
-    .chip:hover { background: var(--accent-light); transform: translateY(-2px); }
-
-    .timeline { display: flex; flex-direction: column; gap: 1.2rem; }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 8px 1fr;
-      gap: 0 1rem;
-    }
-    .timeline-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      margin-top: 0.45rem;
-      flex-shrink: 0;
-    }
-    .timeline-body {}
-    .timeline-title { font-weight: 600; font-size: 0.92rem; }
-    .timeline-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.1rem; }
-    .timeline-desc { font-size: 0.85rem; color: #4b5563; margin-top: 0.35rem; line-height: 1.6; }
-
-    /* Projects */
-    .projects { display: flex; flex-direction: column; gap: 0.9rem; }
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1rem 1.2rem;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .project-card:hover { box-shadow: 0 4px 16px rgba(45,106,79,0.10); transform: translateY(-2px); }
-    .project-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
-    .project-card p  { font-size: 0.82rem; color: var(--muted); }
-    .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.5rem; }
-    .project-tag {
-      background: var(--accent-light);
-      color: var(--accent);
-      border-radius: 6px;
-      padding: 0.15rem 0.55rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-    }
-
-    @media (max-width: 640px) {
-      .page { grid-template-columns: 1fr; }
-      .sidebar { padding: 2rem 1.5rem; }
-      .main   { padding: 2rem 1.5rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
 <div class="page">
 
+  <!-- ══ SIDEBAR ══ -->
   <aside class="sidebar">
 
     <div>
@@ -244,6 +20,7 @@
       <p class="role">Diseño &amp; Desarrollo de Software</p>
     </div>
 
+    <!-- Contacto -->
     <div class="sidebar-section">
       <h3>Contacto</h3>
       <div class="contact-item">
@@ -260,13 +37,17 @@
       </div>
       <div class="contact-item">
         <span class="icon">💼</span>
-        <a href="https://www.linkedin.com/in/mayela-milagros-ticona-mamani-a47425366" target="_blank" style="color:#fff;opacity:0.9;text-decoration:none;font-size:0.78rem;">LinkedIn / Mayela Ticona</a>
+        <a href="https://www.linkedin.com/in/mayela-milagros-ticona-mamani-a47425366"
+           target="_blank"
+           style="color:#fff;opacity:0.9;text-decoration:none;font-size:0.78rem;">
+          LinkedIn / Mayela Ticona
+        </a>
       </div>
     </div>
 
+    <!-- Habilidades -->
     <div class="sidebar-section">
       <h3>Habilidades</h3>
-
       <div class="skill-bar-wrap">
         <div class="skill-bar-label"><span>HTML / CSS</span><span>90%</span></div>
         <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
@@ -285,6 +66,7 @@
       </div>
     </div>
 
+    <!-- Idiomas -->
     <div class="sidebar-section">
       <h3>Idiomas</h3>
       <span class="lang-badge">🇵🇪 Español — Nativo</span>
@@ -294,8 +76,10 @@
 
   </aside>
 
+  <!-- ══ MAIN ══ -->
   <main class="main">
 
+    <!-- Sobre mí -->
     <section>
       <h2 class="section-title">Sobre mí</h2>
       <p class="about-text">
@@ -306,7 +90,7 @@
       </p>
     </section>
 
-
+    <!-- Educación -->
     <section>
       <h2 class="section-title">Educación</h2>
       <div class="timeline">
@@ -314,7 +98,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-body">
             <div class="timeline-title">Diseño y Desarrollo de Software</div>
-            <div class="timeline-sub">TECSUP — Instituto de Educación Superior    - 2024 – Estudiando Actualmete</div>
+            <div class="timeline-sub">TECSUP — Instituto de Educación Superior · 2024 – Estudiando Actualmente</div>
             <div class="timeline-desc">
               Estudiante del 5to ciclo. Formación en desarrollo web, móvil, bases de datos relacionales
               y despliegue de aplicaciones en la nube.
@@ -324,6 +108,7 @@
       </div>
     </section>
 
+    <!-- Experiencia Académica -->
     <section>
       <h2 class="section-title">Experiencia Académica</h2>
       <div class="timeline">
@@ -342,13 +127,16 @@
       </div>
     </section>
 
+    <!-- Proyectos -->
     <section>
       <h2 class="section-title">Proyectos</h2>
       <div class="projects">
 
-        <div class="project-card" style="border-color:#b7e4c7; background:linear-gradient(135deg,#f0faf4,#fff);">
-          <h4>EduSmart — Proyecto Integrador</h4>
-          <p>Sistema educativo completo con backend en Spring Boot, interfaz dinámica en React, chatbot con inteligencia artificial integrado y aplicación móvil para acceso desde cualquier dispositivo.</p>
+        <div class="project-card destacado">
+          <h4>🎓 EduSmart — Proyecto Integrador</h4>
+          <p>Sistema educativo completo con backend en Spring Boot, interfaz dinámica en React,
+             chatbot con inteligencia artificial integrado y aplicación móvil para acceso desde
+             cualquier dispositivo.</p>
           <div class="project-tags">
             <span class="project-tag">Spring Boot</span>
             <span class="project-tag">React</span>
@@ -359,8 +147,9 @@
         </div>
 
         <div class="project-card">
-          <h4>Sistema de Gestión Hospitalaria</h4>
-          <p>Aplicación CRUD para el registro y control de pacientes, desarrollada con Spring Boot y base de datos relacional.</p>
+          <h4>🏥 Sistema de Gestión Hospitalaria</h4>
+          <p>Aplicación CRUD para el registro y control de pacientes, desarrollada con Spring Boot
+             y base de datos relacional.</p>
           <div class="project-tags">
             <span class="project-tag">Spring Boot</span>
             <span class="project-tag">PostgreSQL</span>
@@ -369,8 +158,9 @@
         </div>
 
         <div class="project-card">
-          <h4>CRUD de Usuarios</h4>
-          <p>Aplicación web con operaciones completas de creación, lectura, actualización y eliminación de usuarios sobre una base de datos PostgreSQL.</p>
+          <h4>👤 CRUD de Usuarios</h4>
+          <p>Aplicación web con operaciones completas de creación, lectura, actualización y
+             eliminación de usuarios sobre una base de datos PostgreSQL, desplegada en Render.</p>
           <div class="project-tags">
             <span class="project-tag">Node.js</span>
             <span class="project-tag">PostgreSQL</span>
@@ -379,35 +169,35 @@
           </div>
         </div>
 
-
       </div>
     </section>
 
+    <!-- Información Adicional -->
     <section>
       <h2 class="section-title">Información Adicional</h2>
       <div class="chips" style="flex-direction:column; gap:0.6rem;">
-        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:#374151;">
-          <span style="color:var(--accent);font-weight:700;flex-shrink:0;">▸</span>
+        <div class="info-item">
+          <span class="bullet">▸</span>
           Participación en webinars y charlas sobre inteligencia artificial, innovación y desarrollo tecnológico (2024–2025).
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:#374151;">
-          <span style="color:var(--accent);font-weight:700;flex-shrink:0;">▸</span>
+        <div class="info-item">
+          <span class="bullet">▸</span>
           Curso de actualización en SQL Server (2025).
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:#374151;">
-          <span style="color:var(--accent);font-weight:700;flex-shrink:0;">▸</span>
+        <div class="info-item">
+          <span class="bullet">▸</span>
           Curso de actualización en Java (2025).
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:#374151;">
-          <span style="color:var(--accent);font-weight:700;flex-shrink:0;">▸</span>
+        <div class="info-item">
+          <span class="bullet">▸</span>
           Curso de actualización en Python 3.12 (2025).
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:#374151;">
-          <span style="color:var(--accent);font-weight:700;flex-shrink:0;">▸</span>
+        <div class="info-item">
+          <span class="bullet">▸</span>
           Curso de Ofimática en la Nube (2025).
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:#374151;">
-          <span style="color:var(--accent);font-weight:700;flex-shrink:0;">▸</span>
+        <div class="info-item">
+          <span class="bullet">▸</span>
           Inglés nivel intermedio — TECSUP Conversa.
         </div>
       </div>
